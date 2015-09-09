@@ -1,0 +1,10 @@
+[Unit]
+Description=MBSEC Check Services
+After=network.target syslog.service 
+
+[Service]
+EnvironmentFile=/etc/chkservices/chkservices.conf
+ExecStart=/usr/local/bin/chkservices
+
+[Install]
+WantedBy=multi-user.target
